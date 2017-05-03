@@ -5,6 +5,8 @@
  */
 package taskmanager_haroldmendoza_11541045;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Harold Mendoza
@@ -16,6 +18,12 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setTitle("Task Manager | Harold Mendoza");
+        this.setExtendedState(MAXIMIZED_BOTH);
+        agregar();
+        login(true);
+        
     }
 
     /**
@@ -30,12 +38,12 @@ public class Main extends javax.swing.JFrame {
         jd_login = new javax.swing.JDialog();
         PanelLogin = new javax.swing.JPanel();
         jl_usuario = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_login = new javax.swing.JTextField();
         jl_password = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        pf_passwordField = new javax.swing.JPasswordField();
+        logo = new javax.swing.JLabel();
+        logo2 = new javax.swing.JLabel();
+        bt_login = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
 
         PanelLogin.setBackground(new java.awt.Color(44, 62, 80));
@@ -51,15 +59,20 @@ public class Main extends javax.swing.JFrame {
         jl_password.setForeground(new java.awt.Color(255, 255, 255));
         jl_password.setText("contraseña");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1493866002_Task_Manager_alt_2.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1493866002_Task_Manager_alt_2.png"))); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 169, 236));
-        jLabel2.setText("task manager");
+        logo2.setFont(new java.awt.Font("SansSerif", 1, 48)); // NOI18N
+        logo2.setForeground(new java.awt.Color(0, 169, 236));
+        logo2.setText("task manager");
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1493868701_Right_Arrow.png"))); // NOI18N
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
+        bt_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/1493868701_Right_Arrow.png"))); // NOI18N
+        bt_login.setBorderPainted(false);
+        bt_login.setContentAreaFilled(false);
+        bt_login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_loginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PanelLoginLayout = new javax.swing.GroupLayout(PanelLogin);
         PanelLogin.setLayout(PanelLoginLayout);
@@ -67,39 +80,36 @@ public class Main extends javax.swing.JFrame {
             PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelLoginLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_login)
                     .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(jl_usuario)
-                        .addComponent(jTextField1)
+                        .addComponent(tf_login)
                         .addComponent(jl_password)
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
-                    .addComponent(jLabel2))
+                        .addComponent(pf_passwordField, javax.swing.GroupLayout.DEFAULT_SIZE, 213, Short.MAX_VALUE))
+                    .addComponent(logo2))
                 .addContainerGap(39, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(71, 71, 71))
         );
         PanelLoginLayout.setVerticalGroup(
             PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLoginLayout.createSequentialGroup()
                 .addContainerGap(94, Short.MAX_VALUE)
                 .addGroup(PanelLoginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(logo2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jl_usuario)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jl_password)
                 .addGap(18, 18, 18)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addComponent(pf_passwordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(54, 54, 54)
+                .addComponent(bt_login, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(61, 61, 61))
         );
 
         javax.swing.GroupLayout jd_loginLayout = new javax.swing.GroupLayout(jd_login.getContentPane());
@@ -140,6 +150,21 @@ public class Main extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void bt_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_loginActionPerformed
+        // TODO add your handling code here:
+         if (validarContacto(tf_login.getText(), pf_passwordField.getText())) {
+            
+            JOptionPane.showMessageDialog(this.jd_login, "Se Ingreso Exitosamente");
+            this.jd_login.setVisible(false);
+            this.setVisible(true);
+            //JOptionPane.showMessageDialog(this, "Ha Ingresado al Sistema Exitosamente");
+        } else {
+            JOptionPane.showMessageDialog(this.jd_login, "Usuario Incorrecto");
+        }
+        tf_login.setText("");
+        pf_passwordField.setText("");
+    }//GEN-LAST:event_bt_loginActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -177,14 +202,48 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelLogin;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton bt_login;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JDialog jd_login;
     private javax.swing.JLabel jl_password;
     private javax.swing.JLabel jl_usuario;
+    private javax.swing.JLabel logo;
+    private javax.swing.JLabel logo2;
+    private javax.swing.JPasswordField pf_passwordField;
+    private javax.swing.JTextField tf_login;
     // End of variables declaration//GEN-END:variables
+
+
+    administrarUsuarios usuarios = new administrarUsuarios("./Usuarios.txt"); 
+    Usuario administrador = new Usuario("admin", "123");
+    Usuario usuarioActual; 
+
+
+    private boolean validarContacto(String nombre, String contraseña) {
+        for (Usuario temp : usuarios.getListaUsuarios()) {
+            if (nombre.equals(temp.getNombre()) && contraseña.equals(temp.getContraseña())) {
+                usuarioActual=temp; 
+                return true;
+            }
+        }
+        return false;
+
+    }
+    
+    private void login(boolean show){
+        if(show){
+            this.jd_login.setModal(true); // cuando las subventas se muestre, bloqueara el frame principal
+            this.jd_login.pack(); //Redimensiona la ventana dependiendo de los controles que tenga en el frame
+            this.jd_login.setLocationRelativeTo(this);
+            this.jd_login.setVisible(true);
+            this.setTitle("Login| Task Manager | Harold Mendoza");
+        }
+    
+    }
+    private void agregar() { // se agrega el administrador al arreglo de usuarios
+        usuarios.cargarArchivo();  
+    }
+
+
+
 }
