@@ -54,9 +54,9 @@ public class Main extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        MenuItem_xml = new javax.swing.JMenuItem();
+        MenuItem_ftp = new javax.swing.JMenuItem();
+        MenuItem_Bitacora = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menuItem_logoff = new javax.swing.JMenuItem();
 
@@ -257,24 +257,24 @@ public class Main extends javax.swing.JFrame {
         jMenu1.setForeground(new java.awt.Color(8, 33, 61));
         jMenu1.setText("File");
 
-        jMenuItem1.setBackground(new java.awt.Color(242, 241, 239));
-        jMenuItem1.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jMenuItem1.setForeground(new java.awt.Color(8, 33, 61));
-        jMenuItem1.setText("Crear XML");
-        jMenu1.add(jMenuItem1);
+        MenuItem_xml.setBackground(new java.awt.Color(242, 241, 239));
+        MenuItem_xml.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        MenuItem_xml.setForeground(new java.awt.Color(8, 33, 61));
+        MenuItem_xml.setText("Crear XML");
+        jMenu1.add(MenuItem_xml);
 
-        jMenuItem2.setBackground(new java.awt.Color(242, 241, 239));
-        jMenuItem2.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jMenuItem2.setForeground(new java.awt.Color(8, 33, 61));
-        jMenuItem2.setText("Enviar FTP");
-        jMenu1.add(jMenuItem2);
+        MenuItem_ftp.setBackground(new java.awt.Color(242, 241, 239));
+        MenuItem_ftp.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        MenuItem_ftp.setForeground(new java.awt.Color(8, 33, 61));
+        MenuItem_ftp.setText("Enviar FTP");
+        jMenu1.add(MenuItem_ftp);
 
-        jMenuItem3.setBackground(new java.awt.Color(242, 241, 239));
-        jMenuItem3.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
-        jMenuItem3.setForeground(new java.awt.Color(8, 33, 61));
-        jMenuItem3.setText("Bitacora");
-        jMenuItem3.setContentAreaFilled(false);
-        jMenu1.add(jMenuItem3);
+        MenuItem_Bitacora.setBackground(new java.awt.Color(242, 241, 239));
+        MenuItem_Bitacora.setFont(new java.awt.Font("SansSerif", 0, 14)); // NOI18N
+        MenuItem_Bitacora.setForeground(new java.awt.Color(8, 33, 61));
+        MenuItem_Bitacora.setText("Bitacora");
+        MenuItem_Bitacora.setContentAreaFilled(false);
+        jMenu1.add(MenuItem_Bitacora);
 
         jMenuBar1.add(jMenu1);
 
@@ -374,6 +374,9 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem MenuItem_Bitacora;
+    private javax.swing.JMenuItem MenuItem_ftp;
+    private javax.swing.JMenuItem MenuItem_xml;
     private javax.swing.JPanel PanelLogin;
     private javax.swing.JButton bt_cpu;
     private javax.swing.JButton bt_hdd;
@@ -386,9 +389,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JDialog jd_login;
