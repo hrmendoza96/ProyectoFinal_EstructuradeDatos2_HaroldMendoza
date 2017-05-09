@@ -62,7 +62,7 @@ public class Main extends javax.swing.JFrame {
 
         jd_login.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
-        PanelLogin.setBackground(new java.awt.Color(46, 46, 46));
+        PanelLogin.setBackground(new java.awt.Color(8, 33, 61));
         PanelLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         PanelLogin.setInheritsPopupMenu(true);
         PanelLogin.setName("PanelLogin"); // NOI18N
